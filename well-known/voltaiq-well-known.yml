@@ -1,0 +1,66 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTPS probes of every host this record knows (registrable domain + www, plus the
+  Voltaiq Community Edition host named inside Voltaiq's own public notebooks). No API baseURL or
+  OpenAPI servers[] host exists for this provider - Voltaiq deploys each customer into its own
+  single-tenant AWS VPC and publishes no shared API host.
+note: Every probed path returned HTTP 404 with the HubSpot CMS 404 page (a real 404, not an SPA
+  catch-all - the body is the site 404 template and the status code is 404). No WellKnown or
+  SecurityTxt pointer is emitted, because nothing was served.
+hosts:
+- host: www.voltaiq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: voltaiq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: www.voltaiqcommunity.com
+  note: Voltaiq Community Edition host, discovered in output cells of Voltaiq's own public
+    GitHub notebooks (github.com/Voltaiq). DNS resolves (CNAME import.voltaiqcommunity.com ->
+    34.223.151.12, AWS us-west-2) but both TCP 443 and TCP 80 time out - the host is no longer
+    reachable from the public internet, so no path could be probed.
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /llms.txt
+    status: 0

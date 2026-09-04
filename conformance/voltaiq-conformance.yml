@@ -1,0 +1,64 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.voltaiq.com/security
+docs:
+- https://www.voltaiq.com/security
+- https://www.voltaiq.com/faq
+note: >-
+  Voltaiq publishes no machine-readable contract, so nothing here is derived from a spec - every
+  entry is asserted from Voltaiq's own public security page and marked with the exact claim it
+  rests on. No domain-standard signature could be assessed: the battery / energy-storage sector
+  has candidate interchange conventions (Voltaiq's own "Voltaiq Data Format") but Voltaiq
+  publishes no contract in which such a signature could be read, so the domain_standard slot is
+  left unasserted rather than invented.
+conformance:
+- id: soc2-type-ii
+  conforms: true
+  category: audit
+  evidence: >-
+    https://www.voltaiq.com/security - "Voltaiq holds SOC 2 Type II certification, conducts
+    annual third-party penetration testing, and is compliant with GDPR and ITAR."
+- id: gdpr
+  conforms: true
+  category: regulatory
+  evidence: >-
+    https://www.voltaiq.com/security - "compliant with GDPR and ITAR"; Voltaiq also states an
+    instance "can be deployed in the AWS region of your choice, worldwide" for data residency.
+- id: itar
+  conforms: true
+  category: regulatory
+  evidence: >-
+    https://www.voltaiq.com/security - "Built on the foundations of SOC 2, ITAR, GDPR, and AWS
+    security best practices"; "compliant with GDPR and ITAR."
+- id: saml2
+  conforms: true
+  category: identity
+  evidence: >-
+    https://www.voltaiq.com/security - "Our platform supports SSO and identity federation via
+    SAML 2.0, including Okta, Azure AD, Microsoft 365, and other standard identity providers."
+- id: oauth2
+  conforms: false
+  category: identity
+  evidence: >-
+    No OAuth 2.0 surface is published. /.well-known/oauth-authorization-server and
+    /.well-known/oauth-protected-resource both returned 404 on voltaiq.com and www.voltaiq.com
+    (see well-known/voltaiq-well-known.yml).
+- id: oidc
+  conforms: false
+  category: identity
+  evidence: >-
+    /.well-known/openid-configuration returned 404 on both voltaiq.com and www.voltaiq.com.
+- id: rfc9457
+  conforms: false
+  category: http
+  evidence: >-
+    Not assessable - Voltaiq publishes no API reference or machine-readable contract in which an
+    error envelope could be read.
+- id: domain_standard
+  conforms: false
+  category: domain
+  evidence: >-
+    Not assessable - no published contract. Voltaiq-adjacent battery data conventions exist
+    (github.com/SubwayLabs/VoltaiqDataFormat, "Voltaiq Data Format standardization and
+    conventions"), but that repository is not under Voltaiq's own organization and no Voltaiq
+    contract declares it, so no conformance is asserted.

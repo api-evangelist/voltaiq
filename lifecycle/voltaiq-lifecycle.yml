@@ -1,0 +1,39 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.voltaiq.com/
+note: >-
+  A full search of Voltaiq's public surface (sitemap.xml enumerating 71 pages, plus DNS probes
+  for the conventional subdomains) found no status page, no changelog or release notes, no
+  versioning policy, no deprecation or sunset policy, and no published SLA. Voltaiq's product
+  is a single-tenant deployment per customer, and its security page states "Full technical
+  documentation is available upon request", which is consistent with all lifecycle
+  communication happening privately with each account. No StatusPage or Deprecation pointer is
+  emitted, because neither exists.
+status_page: null
+changelog: null
+sla: null
+versioning:
+  scheme: null
+  documented: false
+deprecation:
+  policy_url: null
+  documented: false
+  sunset_header: false
+  deprecation_header: false
+deprecated_operations: []
+probes:
+- url: https://status.voltaiq.com/
+  status: 0
+  result: NXDOMAIN
+- url: https://trust.voltaiq.com/
+  status: 0
+  result: NXDOMAIN
+- url: https://docs.voltaiq.com/
+  status: 0
+  result: NXDOMAIN
+- url: https://developer.voltaiq.com/
+  status: 0
+  result: NXDOMAIN
+- url: https://www.voltaiq.com/sitemap.xml
+  status: 200
+  result: 71 URLs, none a changelog, status or deprecation page

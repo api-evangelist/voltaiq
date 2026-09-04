@@ -1,0 +1,65 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  Registry searches (registry.npmjs.org, pypi.org/pypi/<pkg>/json, anaconda.org) plus Voltaiq's
+  own public GitHub organization github.com/Voltaiq, whose Analytics Studio notebooks import the
+  first-party library directly.
+note: >-
+  Voltaiq ships exactly one first-party client library - the Python package `voltaiq_studio` -
+  and it is NOT distributed through any public package registry. It is pre-installed inside
+  Voltaiq Analytics Studio, the hosted Python data-science environment that runs inside each
+  customer's single-tenant deployment, so it can only be imported by an authenticated Voltaiq
+  user working in their own instance. Its existence and part of its surface are nevertheless
+  publicly verifiable: Voltaiq's own GitHub organization publishes template and showcase
+  notebooks that import and call it. Because there is no registry record and no pinned
+  distribution URL, `version` and `published` are null for it - checked, nothing to record.
+packages:
+- name: voltaiq_studio
+  language: Python
+  official: true
+  registry: none
+  distribution: in-platform
+  version: null
+  published: null
+  install: null
+  repository: null
+  homepage: https://www.voltaiq.com/platform
+  description: >-
+    First-party Python client for Voltaiq Analytics Studio. Provides access to a customer's
+    Voltaiq data core from inside the hosted notebook environment - test-record retrieval and
+    search, per-cycle statistics, time-series readers, and trace filtering.
+  evidence:
+  - url: https://github.com/Voltaiq/VAS-Template
+    status: 200
+    note: >-
+      Voltaiq's own "Template for Voltaiq Analytic Studio Projects"; its single notebook cell is
+      `import voltaiq_studio as vs`.
+  - url: https://github.com/Voltaiq/vce_Anomalous-Cycle-Exploration_5baf3ae1
+    status: 200
+    note: >-
+      Uses `from voltaiq_studio import TraceFilterOperation` and `vs.get_test_records()`.
+  - url: https://github.com/Voltaiq/vce_Cycle-Life-Prediction-Tutorial_1451ae38
+    status: 200
+    note: >-
+      Uses `vs.get_test_record()` and per-record `.get_cycle_stats()` /
+      `.make_time_series_reader()`.
+  observed_surface:
+  - vs.get_test_records()
+  - vs.get_test_record()
+  - vs.get_custom_search_results()
+  - vs.get_last_custom_search()
+  - TestRecord.get_cycle_stats()
+  - TestRecord.make_time_series_reader()
+  - TraceFilterOperation.LESS_THAN
+  observed_surface_note: >-
+    Read verbatim from call sites in Voltaiq's public notebooks - an observed subset of the
+    library's real surface, not a generated or complete API listing.
+  registry_probes:
+  - url: https://pypi.org/pypi/voltaiq-studio/json
+    status: 404
+  - url: https://pypi.org/pypi/voltaiq/json
+    status: 404
+  - url: https://registry.npmjs.org/voltaiq-studio
+    status: 404
+  - url: https://api.anaconda.org/package/conda-forge/voltaiq-studio
+    status: 404

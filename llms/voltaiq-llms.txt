@@ -1,0 +1,85 @@
+# Voltaiq
+
+> Voltaiq is an enterprise battery intelligence (EBI) software company. Its platform
+> automatically collects, cleans and harmonizes data from battery test equipment, production
+> lines and fielded systems into a single searchable data core, then extracts electrochemical
+> quality indicators, KPIs and traceability for battery R&D, product development, manufacturing
+> and in-field applications.
+
+## Agent-relevant summary
+
+- **Public API contract: none.** Voltaiq states it offers "an API that enables flexible custom
+  integrations" (https://www.voltaiq.com/security), but publishes no developer portal, no API
+  reference, and no machine-readable contract (no OpenAPI, AsyncAPI, GraphQL SDL, gRPC, or
+  WSDL). Its security page states: "Full technical documentation is available upon request."
+- **Deployment shape.** Every customer system runs in its own single-tenant AWS VPC, in a
+  customer-selected AWS region. There is no shared API host; no `api.voltaiq.com`,
+  `docs.voltaiq.com` or `developer.voltaiq.com` resolves in DNS.
+- **No agent surface.** No MCP server, no A2A agent card, no `/llms.txt`, and no served
+  `/.well-known/` document on any Voltaiq host (all paths return HTTP 404).
+- **First-party client library.** `voltaiq_studio` (Python), pre-installed inside Voltaiq
+  Analytics Studio. Not published to PyPI, npm, or conda-forge; only importable by an
+  authenticated user inside their own Voltaiq deployment.
+
+## Company
+
+- [Voltaiq](https://www.voltaiq.com/): Enterprise AI platform for battery engineering.
+- [How it works / platform](https://www.voltaiq.com/platform): Automated data collection,
+  feature/KPI/insight extraction, traceability, no-code analysis, shareable dashboards.
+- [Why Voltaiq](https://www.voltaiq.com/why-voltaiq)
+- [FAQ](https://www.voltaiq.com/faq): Integration model, Analytics Studio, plan tiers.
+- [About](https://www.voltaiq.com/about)
+- [Contact / support](https://www.voltaiq.com/contact-us)
+- [Request a demo](https://www.voltaiq.com/request-demo)
+
+## Product surfaces
+
+- [Battery R&D](https://www.voltaiq.com/battery-r-and-d)
+- [Product development](https://www.voltaiq.com/product-development)
+- [Pilot production](https://www.voltaiq.com/pilot-production)
+- [Battery manufacturing](https://www.voltaiq.com/battery-manufacturing)
+- [Test labs](https://www.voltaiq.com/test-labs)
+- [Module, pack, system](https://www.voltaiq.com/module-pack-system)
+
+## Integrations (as published)
+
+- Cyclers and test hardware: NOVONIX, MACCOR, Arbin, Biologic, Bitrode, Digatron, Neware,
+  Gamry, Chroma, Kataoka, Toyo, Webasto, Keysight.
+- Enterprise and analysis software: AWS, Azure, Siemens, Thermo Fisher, SAP, MathWorks,
+  Batemo, plus LIMS, MES and BI tools (JMP, Minitab, Tableau, Power BI).
+
+## Commercial
+
+- [Pricing](https://www.voltaiq.com/pricing): three tiers - Essential ($5K/mo, billed
+  annually), Professional (contact sales), Enterprise (contact sales).
+- [Privacy policy](https://www.voltaiq.com/privacy-policy)
+- No public terms-of-service page was found (/terms, /terms-of-service, /terms-of-use all 404).
+
+## Security and compliance
+
+- [Security & compliance](https://www.voltaiq.com/security): SOC 2 Type II, GDPR, ITAR,
+  annual third-party penetration testing, SAML 2.0 SSO (Okta, Azure AD, Microsoft 365),
+  role-based access control, single-tenant AWS VPC per customer, encryption at rest and in
+  flight, outbound-only data upload.
+- No `/.well-known/security.txt` is served and no vulnerability disclosure program or bug
+  bounty was found.
+
+## Code
+
+- [GitHub organization](https://github.com/Voltaiq): 12 public repositories, all Jupyter
+  notebook templates and Voltaiq Community Edition showcases (cycle-life prediction, anomaly
+  detection, uncertainty estimation). No SDK, spec, or documentation repository.
+
+## Optional
+
+- [Blog](https://www.voltaiq.com/blog)
+- [News](https://www.voltaiq.com/news)
+- [Resources](https://www.voltaiq.com/resources)
+- [Careers](https://www.voltaiq.com/careers)
+
+---
+generated: 2026-09-04
+method: generated
+source: apis.yml + repo artifacts (well-known/, packages/, plans/, conformance/, lifecycle/,
+  authentication/, security/) after live probing of voltaiq.com. Voltaiq serves no /llms.txt
+  (HTTP 404 on both voltaiq.com and www.voltaiq.com).

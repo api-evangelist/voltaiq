@@ -1,0 +1,45 @@
+generated: '2026-09-04'
+method: searched
+probe: true
+source: https://www.voltaiq.com/security
+url: https://www.voltaiq.com/security
+note: >-
+  Voltaiq does not run a hosted trust portal (trust.voltaiq.com does not resolve). Its
+  security and compliance posture is published as a single first-party page at
+  voltaiq.com/security, which names its certifications explicitly. Enriched by hand from that
+  page after probe-security-programs.py detected it.
+certifications:
+- name: SOC 2 Type II
+  status: certified
+  evidence: >-
+    "Voltaiq holds SOC 2 Type II certification, conducts annual third-party penetration
+    testing, and is compliant with GDPR and ITAR."
+- name: GDPR
+  status: compliant
+  evidence: '"compliant with GDPR and ITAR"'
+- name: ITAR
+  status: supported
+  evidence: >-
+    "Built on the foundations of SOC 2, ITAR, GDPR, and AWS security best practices."
+assurance:
+  third_party_pentest: annual
+  audit_cadence: annual
+  evidence: >-
+    "conducts annual third-party penetration testing" / "audited annually by a third party"
+controls:
+- Single-tenant - dedicated infrastructure and a dedicated AWS VPC for each customer
+- Data encrypted at rest and in flight
+- Secure HTTPS browser access
+- Outbound-only data upload - no inbound connections to the customer network required
+- SAML 2.0 SSO and identity federation (Okta, Azure AD, Microsoft 365)
+- Role-based access controls, customer-controlled user access and permissions
+- Customer-selectable AWS region for data residency
+evidence:
+- source: https://www.voltaiq.com/security
+  status: 200
+  keywords:
+  - soc 2 type ii
+  - gdpr
+  - itar
+  - saml 2.0
+  - penetration testing

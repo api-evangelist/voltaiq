@@ -1,17 +1,34 @@
 aid: voltaiq
 name: Voltaiq
-description: 'Voltaiq is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Voltaiq is an enterprise battery intelligence (EBI) software company that
+  automatically collects, cleans and harmonizes data from battery test equipment, production
+  lines and fielded systems into a single searchable data core, then extracts electrochemical
+  quality indicators, KPIs and traceability for battery R&D, product development, manufacturing
+  and in-field applications. The platform ships no-code dashboards, an Analytics Studio Python
+  data-science environment, and pre-built integrations with industry-standard cyclers (NOVONIX,
+  MACCOR, Arbin, Biologic, Bitrode, Digatron, Neware, Gamry, Chroma, Keysight) alongside LIMS,
+  MES and BI tools. Voltaiq states it offers "an API that enables flexible custom integrations",
+  but every customer system is deployed into its own single-tenant AWS VPC and the company
+  publishes no public developer portal, API reference or machine-readable contract: its security
+  page says "Full technical documentation is available upon request."'
 url: https://raw.githubusercontent.com/api-evangelist/voltaiq/refs/heads/main/apis.yml
+image: https://www.voltaiq.com/hubfs/Featured%20Images/Voltaiq%20Featured%20Image%20%5BFeatured%20Image%5D.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-04'
 modified: '2026-09-04'
 tags:
 - Company
+- Batteries
+- Energy Storage
+- Manufacturing
+- Analytics
+- Industrial IoT
+- Data Management
+- Quality
+- Electric Vehicles
+- Enterprise Software
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,60 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/voltaiq-trust-center.yml
+- type: DomainSecurity
+  url: security/voltaiq-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.voltaiq.com/
+- type: Blog
+  url: https://www.voltaiq.com/blog
+- type: Pricing
+  url: https://www.voltaiq.com/pricing
+- type: PrivacyPolicy
+  url: https://www.voltaiq.com/privacy-policy
+- type: Support
+  url: https://www.voltaiq.com/contact-us
+- type: GitHubOrganization
+  url: https://github.com/Voltaiq
+- type: Compliance
+  url: https://www.voltaiq.com/security
+- type: Conformance
+  url: conformance/voltaiq-conformance.yml
+- type: Lifecycle
+  url: lifecycle/voltaiq-lifecycle.yml
+- type: Authentication
+  url: authentication/voltaiq-authentication.yml
+- type: Packages
+  url: packages/voltaiq-packages.yml
+- type: SDKs
+  url: packages/voltaiq-packages.yml
+- type: Plans
+  url: plans/voltaiq-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/voltaiq-rate-limits.yml
+- type: LLMsTxt
+  url: llms/voltaiq-llms.txt
+x-enrichment:
+  date: '2026-09-04'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Voltaiq markets "an API that enables flexible custom integrations" but ships every customer
+    into its own single-tenant AWS VPC with no shared API host, and its security page ends the
+    integration section with "Full technical documentation is available upon request" - so the
+    reference and any contract exist only for an account holder.
+  evidence:
+  - url: https://www.voltaiq.com/security
+    status: 200
+  - url: https://www.voltaiq.com/openapi.json
+    status: 404
+  - url: https://api.voltaiq.com/
+    status: 0
+  - url: https://docs.voltaiq.com/
+    status: 0
+  checked: '2026-09-04'

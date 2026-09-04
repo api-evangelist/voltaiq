@@ -1,0 +1,54 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.voltaiq.com/pricing
+docs:
+- https://www.voltaiq.com/pricing
+- https://www.voltaiq.com/faq
+currency: USD
+billing_model: subscription
+plan_count: 3
+note: Voltaiq publishes a three-tier plan structure with a single named list price. Only the
+  Essential tier carries a public number ("$5K/mo", billed annually); Professional and
+  Enterprise are quote-only. The pricing page publishes no per-tier quotas, seat counts, data
+  volumes or API call allowances, so none are recorded here. Voltaiq's FAQ states pricing for
+  the upper tiers "is based on application, data volumes, and service needs".
+plans:
+- name: Essential
+  price: 5000
+  price_display: $5K/mo
+  currency: USD
+  period: month
+  billing: annual
+  public_price: true
+  description: Perfect for getting started with an offering that covers all your day-to-day
+    battery data analysis and management needs.
+  quota: null
+  overage: null
+  limits: []
+  source: https://www.voltaiq.com/pricing
+- name: Professional
+  price: null
+  price_display: Contact sales
+  currency: USD
+  period: null
+  billing: annual
+  public_price: false
+  description: An enhanced offering for organizations requiring more powerful automation and
+    advanced configurability.
+  quota: null
+  overage: null
+  limits: []
+  source: https://www.voltaiq.com/pricing
+- name: Enterprise
+  price: null
+  price_display: Contact sales
+  currency: USD
+  period: null
+  billing: annual
+  public_price: false
+  description: Unlock the full potential of battery quality analytics for manufacturers, as
+    well as large quality and validation test labs.
+  quota: null
+  overage: null
+  limits: []
+  source: https://www.voltaiq.com/pricing

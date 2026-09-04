@@ -1,0 +1,42 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.voltaiq.com/security
+docs:
+- https://www.voltaiq.com/security
+note: >-
+  Nothing here is derived from a specification - Voltaiq publishes no OpenAPI, so
+  derive-authentication.py produced no profile (0 auth profiles, 0 errors). Everything below is
+  read from Voltaiq's own public security page. The API authentication model itself is NOT
+  public: Voltaiq states it ships "an API that enables flexible custom integrations" but the
+  same page says "Full technical documentation is available upon request", so the scheme an API
+  client would present (key, bearer, session, mTLS) is unknown and is recorded as unknown
+  rather than guessed.
+platform_authentication:
+  sso: true
+  protocol: SAML 2.0
+  identity_providers:
+  - Okta
+  - Azure AD
+  - Microsoft 365
+  - other standard identity providers
+  mfa: null
+  rbac: true
+  evidence: >-
+    "Our platform supports SSO and identity federation via SAML 2.0, including Okta, Azure AD,
+    Microsoft 365, and other standard identity providers." / "Voltaiq offers many security
+    features including SAML SSO, robust authentication, and role-based access controls."
+api_authentication:
+  documented: false
+  scheme: unknown
+  note: >-
+    No public API reference exists. The Voltaiq Analytics Studio Python client
+    (`voltaiq_studio`) runs pre-authenticated inside the customer's own hosted notebook
+    environment and takes no credential argument in any of Voltaiq's public example notebooks,
+    so no client-side auth flow is observable from the public surface.
+data_transport:
+  ingest: SSH & SFTP (encrypted) - "Secure data upload is handled via SSH & SFTP encryption"
+  direction: outbound-only - "Outbound-only data upload - no inbound connections to your
+    network are required"
+  browser_access: HTTPS
+  tenancy: single-tenant - dedicated infrastructure and a dedicated AWS VPC per customer
+security_schemes: []

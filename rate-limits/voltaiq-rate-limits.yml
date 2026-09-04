@@ -1,0 +1,25 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.voltaiq.com/security
+limit_count: 0
+note: Voltaiq documents no API rate limits anywhere on its public surface. The company states
+  it ships "an API that enables flexible custom integrations" (voltaiq.com/security) but every
+  customer runs in a dedicated single-tenant AWS VPC and, per the same page, "Full technical
+  documentation is available upon request" - so no throttle values, windows, burst allowances,
+  response headers (X-RateLimit-*, RateLimit-*, Retry-After) or 429 semantics are publicly
+  readable. This is an honest zero, not an unchecked field.
+searched:
+- url: https://www.voltaiq.com/security
+  status: 200
+  found: null
+- url: https://www.voltaiq.com/faq
+  status: 200
+  found: null
+- url: https://www.voltaiq.com/platform
+  status: 200
+  found: null
+- url: https://www.voltaiq.com/pricing
+  status: 200
+  found: null
+rate_limits: []
+response_headers: []
